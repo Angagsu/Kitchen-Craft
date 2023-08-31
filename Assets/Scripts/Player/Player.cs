@@ -1,9 +1,19 @@
 using System;
 using UnityEngine;
+using Unity.Netcode;
+using System.Collections.Generic;
 
-public class Player : MonoBehaviour, IKitchenObjectParent
+public class Player : NetworkBehaviour, IKitchenObjectParent
 {
-    public static Player Instance { get; private set; }
+    public static event EventHandler OnAnyPlayerSpawned;
+    public static event EventHandler OnAnyPlayerPickedSometing;
+    public static void ResetStaticData()
+    {
+        OnAnyPlayerSpawned = null;
+        OnAnyPlayerPickedSometing = null;
+    }
+
+    public static Player LocalInstance { get; private set; }
 
 
     public event EventHandler OnPlayerPickedSomething;
@@ -16,29 +26,50 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float rotatSpeed = 10f;
-    [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
+    [SerializeField] private LayerMask collisionsLayerMask;
     [SerializeField] private Transform objectHandlePoint;
+    [SerializeField] private List<Vector3> spawnPositionList;
+    [SerializeField] private PlayerVisual playerVisual;
 
     private KitchenObject kitchenObject;
     private BaseCounter selectedCounter;
     private Vector3 lastInteractDirection;
     private bool isWalking = false;
 
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(Instance.gameObject);
-        }
-
-        Instance = this;
-    }
 
     private void Start()
     {
-        gameInput.OnInteractAction += GameInput_OnInteractAction;
-        gameInput.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
+        GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+        GameInput.Instance.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
+
+        PlayerData playerData = KitchenGameMultiplayer.Instance.GetPlayerDataFromClientID(OwnerClientId);
+        playerVisual.SetPlayerColor(KitchenGameMultiplayer.Instance.GetPlayerColor(playerData.ColorID));
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            LocalInstance = this;
+        }
+
+        transform.position = spawnPositionList[KitchenGameMultiplayer.Instance.GetPlayerDataIndexFromClientID(OwnerClientId)];
+
+        OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);
+
+        if (IsServer)
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
+        }
+    }
+
+    private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
+    {
+        if (clientId == OwnerClientId && HasKitchenObject())
+        {
+            KitchenObject.DestroyKitchenObject(GetKitchenObject());
+        }
     }
 
     private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
@@ -65,13 +96,27 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
+
+        //HandleMovementServerAuth();
         HandleMovement();
         HandleInteractions();
     }
 
-    private void HandleMovement()
+    #region HandleMovementServer
+
+    private void HandleMovementServerAuth()
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
+        HandleMovementServerRpc(inputVector);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void HandleMovementServerRpc(Vector2 inputVector)
+    {
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
 
         float moveDistance = moveSpeed * Time.deltaTime;
@@ -88,10 +133,31 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         isWalking = moveDirection != Vector3.zero;
         transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotatSpeed);
     }
+    #endregion
+    
+    private void HandleMovement()
+    {
+        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
+        Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
+
+        float moveDistance = moveSpeed * Time.deltaTime;
+        //float playerHeight = 2f;
+        float playerRadius = 0.7f;
+        bool canMove = !Physics.BoxCast(transform.position, Vector3.one * playerRadius,
+            moveDirection, Quaternion.identity, moveDistance, collisionsLayerMask);
+
+        if (canMove)
+        {
+            transform.position += moveDirection * moveDistance;
+        }
+
+        isWalking = moveDirection != Vector3.zero;
+        transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotatSpeed);
+    }
 
     private void HandleInteractions()
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
 
         if (moveDirection != Vector3.zero)
@@ -145,6 +211,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if (kitchenObject != null)
         {
             OnPlayerPickedSomething?.Invoke(this, EventArgs.Empty);
+            OnAnyPlayerPickedSometing?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -161,5 +228,10 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public bool HasKitchenObject()
     {
         return kitchenObject != null;
+    }
+
+    public NetworkObject GetNetworkObject()
+    {
+        return NetworkObject;
     }
 }

@@ -7,13 +7,24 @@ public class MainMenuUI : MonoBehaviour
 {
     private Scene scene;
 
-    [SerializeField] private Button playButton;
+    [SerializeField] private Button playSingleplayerButton;
+    [SerializeField] private Button playMultiplayerButton;
     [SerializeField] private Button quitButton;
 
     private void Awake()
     {
-        playButton.onClick.AddListener(() => {
-            Loader.Load(Loader.Scene.GameScene);
+        playSingleplayerButton.onClick.AddListener(() => 
+        {
+            KitchenGameMultiplayer.IsPlayMultiplayer = false;
+
+            Loader.Load(Loader.Scene.LobbyScene);
+        });
+
+        playMultiplayerButton.onClick.AddListener(() =>
+        {
+            KitchenGameMultiplayer.IsPlayMultiplayer = true;
+
+            Loader.Load(Loader.Scene.LobbyScene);
         });
 
         quitButton.onClick.AddListener(() => { Application.Quit(); });

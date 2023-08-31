@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 7bb23755ab54cbe408d838ab297d65d4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1017
+        width: 549
+        height: 347
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc9bb3c3e1c48b40b9599f7ad81394a
+      internalID: 8053014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_1
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1107
+        width: 246
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9800ba79452464e96b136179eb8fd9
+      internalID: -703621498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_2
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1098
+        width: 276
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2657237348b4de74d9627bd26c281d08
+      internalID: 2113479673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_4
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1266
+        width: 214
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbfa9627bce7b642a6856470f7688da
+      internalID: -1055734561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_5
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1157
+        width: 166
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f62643011da50640815d67557d1721a
+      internalID: 2026518495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_7
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1004
+        width: 146
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21d968be8a24e54f967a215373d4381
+      internalID: -1773667640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 813
+        width: 1491
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890b6fdef4d3e0c47974b05892baa883
+      internalID: 188217541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 756
+        width: 1491
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe114c4b2fd32444f9277b132f5d9fdb
+      internalID: -1862639128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 692
+        width: 1491
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3516c3438d960e41aaa8104d33b26ca
+      internalID: 2127250410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 239
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8defd005e24693a43983254c8203ea78
+      internalID: 567529025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_12
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 509
+        width: 901
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe15fe2dbe0939478a5f0072fa16205
+      internalID: 1377683279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_19
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 304
+        width: 656
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5847221b29f843240aacc6bb0afb7f3f
+      internalID: 5026699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_23
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 300
+        width: 117
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a542370eccc6b2444b1504c13d0a61e9
+      internalID: 1067414809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 225
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07046c4531d88d5478b822ea177761f9
+      internalID: 1719220529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_25
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 228
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32448ba92d416d49974025d57dc93b1
+      internalID: 1981588027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_26
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 3
+        width: 224
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c1e89838082b44d80b933e9c3a14c2
+      internalID: -2038784299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_27
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 112
+        width: 165
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7653b74eaee8aa34b88f6c06f6078f18
+      internalID: 1945457009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_28
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 118
+        width: 160
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7352b28654792c488143e6e027b32fd
+      internalID: -1745111860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_29
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 118
+        width: 162
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e613efff286244449a3c9aa1bfe7a5f1
+      internalID: 1691144626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-menu-interface-scrollbars-Icons_30
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 123
+        width: 160
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1263a7c73a0dc479234b78b221a5b3
+      internalID: 329321408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2aad59e01048e7449a471b7e034756ad
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_0: 8053014
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_1: -703621498
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_10: 2127250410
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_11: 567529025
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_12: 1377683279
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_13: 267912979
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_14: -1360510533
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_15: 749000982
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_16: -1577701048
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_17: 2032119882
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_18: 64435264
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_19: 5026699
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_2: 2113479673
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_20: 1060885450
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_21: -1295564137
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_22: -1205607124
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_23: 1067414809
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_24: 1719220529
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_25: 1981588027
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_26: -2038784299
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_27: 1945457009
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_28: -1745111860
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_29: 1691144626
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_3: -341720462
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_30: 329321408
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_4: -1055734561
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_5: 2026518495
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_6: 1489567109
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_7: -1773667640
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_8: 188217541
+      vecteezy_game-ui-menu-interface-scrollbars-Icons_9: -1862639128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

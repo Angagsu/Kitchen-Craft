@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
 public class GameOverUI : MonoBehaviour
 {
+    [SerializeField] private Button playAgainButton;
     [SerializeField] private TextMeshProUGUI recipesDeliveredText;
+
+    private void Awake()
+    {
+        playAgainButton.onClick.AddListener(() =>
+        {
+            NetworkManager.Singleton.Shutdown();
+            Loader.Load(Loader.Scene.MainMenuScene);
+        }); 
+    }
 
     private void Start()
     {
         GameManager.Instance.OnStateChanged += GameManager_OnStateChanged;
+
         Hide();
     }
 
@@ -26,6 +38,7 @@ public class GameOverUI : MonoBehaviour
         {
             Hide();
         }
+        
     }
 
     private void Show()
@@ -39,3 +52,4 @@ public class GameOverUI : MonoBehaviour
 
     }
 }
+

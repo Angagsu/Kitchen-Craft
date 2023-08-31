@@ -31,7 +31,7 @@ public class SoundManager : MonoBehaviour
         DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
         DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;
         CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;
-        Player.Instance.OnPlayerPickedSomething += Player_OnPlayerPickedSomething;
+        Player.OnAnyPlayerPickedSometing += Player_OnPlayerPickedSomething;
         BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
         TrashCounter.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;
     }
@@ -50,7 +50,7 @@ public class SoundManager : MonoBehaviour
 
     private void Player_OnPlayerPickedSomething(object sender, System.EventArgs e)
     {
-        Player player = Player.Instance;
+        Player player = sender as Player;
         PlaySound(audioClipRefsSO.ObjectPickup, player.transform.position);
     }
 
