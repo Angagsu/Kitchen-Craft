@@ -38,6 +38,7 @@ public class GameInput : MonoBehaviour
         }
 
         playerInputActions = new PlayerInputAction();
+        
 
         if (PlayerPrefs.HasKey(PLAYER_PREFS_BINDINGS))
         {
