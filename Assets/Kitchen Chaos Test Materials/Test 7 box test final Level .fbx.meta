@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 2ad06622101f69c408f34450a371ceda
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 4259990058418003875
+    second: Close Idle
+  - first:
+      74: -8359354462096028644
+    second: Open-Close Left
+  - first:
+      74: -8631586045244193695
+    second: Norri Sheets|Close Idle
+  - first:
+      74: -8142777479637718032
+    second: Norri Sheets|Open-Close Left
+  - first:
+      74: -7149169815723511358
+    second: Norri Sheets|Open-Close Right
+  - first:
+      74: -6745415437386803928
+    second: Norri Sheets|Open-Close Right.001
+  - first:
+      74: -4043328978063646
+    second: Norri Sheets|Open-Close Right.002
+  - first:
+      74: -2266109013890697071
+    second: Bread|Close Idle
+  - first:
+      74: 6392831592194029207
+    second: Bread|Open-Close Left
+  - first:
+      74: 7867465596158449273
+    second: Bread|Open-Close Right
+  - first:
+      74: 7612338797718390848
+    second: Bread|Open-Close Right.001
+  - first:
+      74: 4663289534750422316
+    second: Bread|Open-Close Right.002
+  - first:
+      74: 7407078120127136635
+    second: Cheese|Close Idle
+  - first:
+      74: -7156921327090632587
+    second: Cheese|Open-Close Left
+  - first:
+      74: -8826509442505290712
+    second: Cheese|Open-Close Right
+  - first:
+      74: -1862063456731234809
+    second: Cheese|Open-Close Right.001
+  - first:
+      74: -5222916857299176864
+    second: Cheese|Open-Close Right.002
+  - first:
+      74: 8969856883422816760
+    second: Fish|Close Idle
+  - first:
+      74: 2706143432464983615
+    second: Fish|Open-Close Left
+  - first:
+      74: -1900001679607004888
+    second: Fish|Open-Close Right
+  - first:
+      74: 3204762855101278260
+    second: Fish|Open-Close Right.001
+  - first:
+      74: 5490969397009451854
+    second: Fish|Open-Close Right.002
+  - first:
+      74: -3119530628604046254
+    second: Cucumber|Close Idle
+  - first:
+      74: -3945040929877145920
+    second: Cucumber|Open-Close Left
+  - first:
+      74: 8132559425083190387
+    second: Cucumber|Open-Close Right
+  - first:
+      74: 4094460926163429126
+    second: Cucumber|Open-Close Right.001
+  - first:
+      74: -8842896043099064773
+    second: Cucumber|Open-Close Right.002
+  - first:
+      74: 8904254281323705458
+    second: Cabbage|Close Idle
+  - first:
+      74: -1001247733278201452
+    second: Cabbage|Open-Close Left
+  - first:
+      74: -3834102020865942056
+    second: Cabbage|Open-Close Right
+  - first:
+      74: -7160140156327331756
+    second: Cabbage|Open-Close Right.001
+  - first:
+      74: -3714042526943620454
+    second: Cabbage|Open-Close Right.002
+  - first:
+      74: 2227011998344559009
+    second: Meat|Close Idle
+  - first:
+      74: 3131630592491644634
+    second: Meat|Open-Close Left
+  - first:
+      74: 869582094017337605
+    second: Meat|Open-Close Right
+  - first:
+      74: 4922294993212087417
+    second: Meat|Open-Close Right.001
+  - first:
+      74: -8812584165446501740
+    second: Meat|Open-Close Right.002
+  - first:
+      74: -1024099162166147621
+    second: Potato|Close Idle
+  - first:
+      74: 7853053912197799988
+    second: Potato|Open-Close Left
+  - first:
+      74: -7970514455246778014
+    second: Potato|Open-Close Right
+  - first:
+      74: 2776148492980770690
+    second: Potato|Open-Close Right.001
+  - first:
+      74: -2170664867296488026
+    second: Potato|Open-Close Right.002
+  - first:
+      74: -2387341814204984988
+    second: Tomato|Close Idle
+  - first:
+      74: 4300885799920541021
+    second: Tomato|Open-Close Left
+  - first:
+      74: 8202649451328717659
+    second: Tomato|Open-Close Right
+  - first:
+      74: 2684113708770873976
+    second: Tomato|Open-Close Right.001
+  - first:
+      74: -8348179098677722560
+    second: Tomato|Open-Close Right.002
+  - first:
+      74: 5502561647043623809
+    second: Rice|Close Idle
+  - first:
+      74: 991749440874432794
+    second: Rice|Open-Close Left
+  - first:
+      74: -6881340482930954021
+    second: Rice|Open-Close Right
+  - first:
+      74: -5849800119596838609
+    second: Rice|Open-Close Right.001
+  - first:
+      74: -499185036911604012
+    second: Rice|Open-Close Right.002
+  - first:
+      74: -7233321579283468048
+    second: Knife|Knife Cutting
+  - first:
+      74: 9146634702400007169
+    second: Knife|Knife Cutting Finish
+  - first:
+      74: -5905093510248778543
+    second: Knife|Knife Cutting Start
+  - first:
+      74: -2888890256527737640
+    second: Knife|Knife Idle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bollard
+    second: {fileID: 2100000, guid: 3a9d05c7e3e68b343b0112628f5eb8e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bonfire
+    second: {fileID: 2100000, guid: b1706e0c03afd6242826741c63eeef41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crockery
+    second: {fileID: 2100000, guid: 2bb4f0d2e58d66f4992f7868a54bc255, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish Slider
+    second: {fileID: 2100000, guid: 7c51fdb68432fa04388cce9b4f6d6632, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gas
+    second: {fileID: 2100000, guid: d68e95555de21a149b322a8c21350521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: ec4552c6a73d9ab4b8dc87a7f27a9258, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamp
+    second: {fileID: 2100000, guid: 33abfce63f362d249bd62e2bec79c2aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 41813fc8ee0a8a742a489532cc6d1fb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlateBollard
+    second: {fileID: 2100000, guid: e5bd3e9369cf58043afed6058c2a6212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Product Box
+    second: {fileID: 2100000, guid: 75495c10863214243a3b656a0950bdf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sink
+    second: {fileID: 2100000, guid: e80c2778322f2ce419773b96742ea338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slider
+    second: {fileID: 2100000, guid: c92d92d2d140f2e499eaa39d66c3723e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trash Bin
+    second: {fileID: 2100000, guid: 180db79bba4a0394b89b0c6baf24a44b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: 114935cc7e7904c41876f274eea02938, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 2100000, guid: f39135bc23de43b4e90ce958c7ed7367, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
