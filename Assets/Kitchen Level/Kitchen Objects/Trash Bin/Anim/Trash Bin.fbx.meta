@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: f3e4e0a54be61f3498a70a66c8596adc
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -4178573117288223993
+    second: Armature_TrashBin.001|Tash Bin Open Right
+  - first:
+      74: -8189575870685271862
+    second: Armature_TrashBin.001|Trash Bin Close
+  - first:
+      74: 2367157483950980580
+    second: Armature_TrashBin.001|Trash Bin Open Left
+  - first:
+      74: 6226701089387241388
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Tash
+      Bin Open Right
+  - first:
+      74: 7531388609001943640
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Trash
+      Bin Close|Arm
+  - first:
+      74: -2459524457561505685
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Trash
+      Bin Open Left
+  - first:
+      74: -3600021131973557483
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Tash
+      Bin Open R
+  - first:
+      74: -3459115288817206636
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Trash
+      Bin Close
+  - first:
+      74: -6293169134230380799
+    second: 'Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Trash
+      Bin Open '
+  - first:
+      74: 2708849818680969013
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashB
+  - first:
+      74: 1804652579625119292
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashB.001
+  - first:
+      74: -1516470869100016939
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashB.002
+  - first:
+      74: 6315843275310004095
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashB.003
+  - first:
+      74: 6595415995738609557
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashB.004
+  - first:
+      74: -8334601153399625659
+    second: Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.001|Armature_TrashBin.0
+  - first:
+      74: -2215912297565045211
+    second: Armature_TrashBin.001|TB_ Close
+  - first:
+      74: 6375447263192688678
+    second: Armature_TrashBin.001|TB_Open Left
+  - first:
+      74: 3150550887707997143
+    second: Armature_TrashBin.001|TB_Open Right
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trash Bin
+    second: {fileID: 2100000, guid: 7812dbb220e2afb49af2b112e6f84825, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trash Bin.001
+    second: {fileID: 2100000, guid: 7812dbb220e2afb49af2b112e6f84825, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

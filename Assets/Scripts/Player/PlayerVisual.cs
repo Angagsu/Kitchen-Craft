@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer headMeshRenderer;
-    [SerializeField] private MeshRenderer bodyMeshRenderer;
+    [SerializeField] private SkinnedMeshRenderer headMeshRenderer;
+   // [SerializeField] private MeshRenderer bodyMeshRenderer;
 
     private Material material;
 
@@ -13,7 +13,7 @@ public class PlayerVisual : MonoBehaviour
     {
         material = new Material(headMeshRenderer.material);
         headMeshRenderer.material = material;
-        bodyMeshRenderer.material = material;
+        //bodyMeshRenderer.material = material;
     }
 
     public void SetPlayerColor(Color color)

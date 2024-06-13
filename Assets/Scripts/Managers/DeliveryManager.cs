@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -15,7 +14,6 @@ public class DeliveryManager : NetworkBehaviour
     public event EventHandler OnRecipeFailed;
 
 
-
     [SerializeField] private RecipeSOList recipeSOList;
 
     private List<RecipeSO> waitingRecipeSOs;
@@ -23,6 +21,10 @@ public class DeliveryManager : NetworkBehaviour
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 4;
     private int successfulRecipesAmount = 0;
+
+    [field: SerializeField] public DeliveryCounter[] DeliveryCounters { get; private set; }
+    [field: SerializeField] public DeliveryResultUI[] DeliveryResultUIs { get; private set; }
+
 
     private void Awake()
     {
@@ -59,6 +61,7 @@ public class DeliveryManager : NetworkBehaviour
             
         }
     }
+
     [ClientRpc]
     private void SpawnNewWaitingRecipeClientRpc(int waitingRecipeSOIndex)
     {
@@ -68,7 +71,7 @@ public class DeliveryManager : NetworkBehaviour
         OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
     }
 
-    public void DeliverRecipe(PlateKitchenObject plateKitchenObject)
+    public void DeliverRecipe(PlateKitchenObject plateKitchenObject, int index)
     {
         for (int i = 0; i < waitingRecipeSOs.Count; i++)
         {
@@ -99,39 +102,47 @@ public class DeliveryManager : NetworkBehaviour
 
                 if (plateContentsMatchesRecipe)
                 {
-                    DeliverCorrectRecipeServerRpc(i);
+                    DeliverCorrectRecipeServerRpc(i, index);
                     return;
                 }
             }
         }
 
-        DeliverIncorrectRecipeServerRpc();
+        DeliverIncorrectRecipeServerRpc(index);
     }
+
     [ServerRpc(RequireOwnership = false)]
-    private void DeliverIncorrectRecipeServerRpc()
+    private void DeliverIncorrectRecipeServerRpc(int index)
     {
-        DeliverIncorrectRecipeClientRpc();
+        DeliverIncorrectRecipeClientRpc(index);
     }
 
     [ClientRpc]
-    private void DeliverIncorrectRecipeClientRpc()
+    private void DeliverIncorrectRecipeClientRpc(int index)
     {
         OnRecipeFailed?.Invoke(this, EventArgs.Empty);
+
+
+        DeliveryResultUIs[index].OnRecipeFaild();
+
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void DeliverCorrectRecipeServerRpc(int waitingRecipeSOListIndex)
+    private void DeliverCorrectRecipeServerRpc(int waitingRecipeSOListIndex, int index)
     {
-        DeliverCorrectRecipeClientRpc(waitingRecipeSOListIndex);
+        DeliverCorrectRecipeClientRpc(waitingRecipeSOListIndex, index);
     }
 
     [ClientRpc]
-    private void DeliverCorrectRecipeClientRpc(int waitingRecipeSOListIndex)
+    private void DeliverCorrectRecipeClientRpc(int waitingRecipeSOListIndex, int index)
     {
         successfulRecipesAmount++;
         waitingRecipeSOs.RemoveAt(waitingRecipeSOListIndex);
         OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
         OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
+
+        DeliveryCounters[index].AddSuccessfulRecipesCountClientRpc();
+        DeliveryResultUIs[index].OnRecipeSuccess();
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList()

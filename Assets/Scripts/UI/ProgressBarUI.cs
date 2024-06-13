@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +15,6 @@ public class ProgressBarUI : MonoBehaviour
         {
             Debug.LogError("GameObject " + hasProgressGameObject + " has no component that implemented IHasProgress Interface");
         }
-
         hasProgress.OnProgressChanged += HasProgress_OnProgressChanged;
         progressBarImage.fillAmount = 0f;
         transform.forward = Camera.main.transform.forward;

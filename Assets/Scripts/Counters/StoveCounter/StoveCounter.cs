@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -165,6 +163,8 @@ public class StoveCounter : BaseCounter, IHasProgress
     private void SetStateIdleServerRpc()
     {
         state.Value = State.Idle;
+        fryingTimer.Value = 0;
+        burningTimer.Value = 0;
     }
 
     [ServerRpc(RequireOwnership = false)]

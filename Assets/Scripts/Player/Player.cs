@@ -21,8 +21,9 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
         public BaseCounter SelectedCounter;
-    } 
+    }
 
+    public int PlayerTeam { get; set; }
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float rotatSpeed = 10f;
@@ -36,6 +37,7 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
     private BaseCounter selectedCounter;
     private Vector3 lastInteractDirection;
     private bool isWalking = false;
+
 
 
     private void Start()
@@ -54,6 +56,11 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
             LocalInstance = this;
         }
 
+        if (IsClient)
+        {
+            GameManager.Instance.SetConnectedPlayer(this);
+        }
+        
         transform.position = spawnPositionList[KitchenGameMultiplayer.Instance.GetPlayerDataIndexFromClientID(OwnerClientId)];
 
         OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);

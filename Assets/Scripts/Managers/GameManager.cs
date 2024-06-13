@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -31,10 +30,14 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<float> countdownToStartTimer = new NetworkVariable<float>(3f);
     private NetworkVariable<float> gamePlayingTimer =      new NetworkVariable<float>(0f);
     private NetworkVariable<bool>  isGamePaused =          new NetworkVariable<bool>(false);
-    private float gamePlayingTimerMax = 90f;
+    private float gamePlayingTimerMax = 120f;
     private bool isLocalGamePaused = false;
     private bool isLocalPlayerReady;
     private bool autoTestGamePausedState;
+
+
+    private List<Player> players = new List<Player>();
+    private Player previousPlayer = null;
 
     private void Awake()
     {
@@ -60,7 +63,7 @@ public class GameManager : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         state.OnValueChanged += StateOnValueChanged;
-        isGamePaused.OnValueChanged += IsGamePaused_OnValueChanged;
+        isGamePaused.OnValueChanged += IsGamePaused_OnValueChanged;        
 
         if (IsServer)
         {
@@ -69,12 +72,66 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             Transform playerTransform = Instantiate(playerPrefab);
             playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+        }    
+    }
+
+    public void SetConnectedPlayer(Player player)
+    {  
+        players.Add(player);        
+    }
+
+    public List<Player> GetConnectedPlayersList()
+    {
+        return players;
+    }
+
+    public int GetPlayerIndexFromConnectedPlayers(Player player)
+    {
+        int index;
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i] == player)
+            {
+                return index = i;
+            }
+        }
+        return -1;
+    }
+
+    public Player GetPlayerFromConnectedPlayersIndex(int index)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i] == players[index])
+            {
+                return players[i];
+            }
+        }
+        return null;
+    }
+
+    [ClientRpc]
+    private void SetPlayersTeamClientRpc()
+    {
+        for (int i = 0; i < KitchenGameMultiplayer.Instance.playerDataNetworkList.Count; i++)
+        {
+            if (previousPlayer && previousPlayer.PlayerTeam == 0)
+            {
+                players[i].PlayerTeam = 1;
+            }
+            else
+            {
+                players[i].PlayerTeam = 0;
+            }
+
+            previousPlayer = players[i];
         }
     }
 
@@ -136,6 +193,10 @@ public class GameManager : NetworkBehaviour
         if (allClientsReady)
         {
             state.Value = State.CountdownToStart;
+            if (KitchenGameMultiplayer.IsPlayMultiplayerArenaMode)
+            {
+                SetPlayersTeamClientRpc();
+            }         
         }
     }
 

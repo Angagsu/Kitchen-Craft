@@ -17,6 +17,7 @@ public class KitchenGameMultiplayer : NetworkBehaviour
 
     public static KitchenGameMultiplayer Instance { get; private set; }
     public static bool IsPlayMultiplayer;
+    public static bool IsPlayMultiplayerArenaMode;
 
     public event EventHandler OnTryingToJoinGame;
     public event EventHandler OnFaildToJoinGame;
@@ -25,7 +26,7 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     [SerializeField] private KitchenObjectListSO kitchenObjectListSO;
     [SerializeField] private List<Color> playerColorList;
 
-    private NetworkList<PlayerData> playerDataNetworkList;
+    public NetworkList<PlayerData> playerDataNetworkList;
     private string playerName;
 
     [SerializeField] private UnityTransport unityTransport;
@@ -93,10 +94,12 @@ public class KitchenGameMultiplayer : NetworkBehaviour
 
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)
     {
+
         playerDataNetworkList.Add(new PlayerData
         {
             ClientID = clientId,
             ColorID = GetFirstUnusedColorID(),
+            PlayerTeam = 1,
         });
 
         SetPlayerNameServerRpc(GetPlayerName());
@@ -135,6 +138,7 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     {
         SetPlayerNameServerRpc(GetPlayerName());
         SetPlayerIDServerRpc(AuthenticationService.Instance.PlayerId);
+        SetPlayerTeamServerRpc(1);
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -161,6 +165,17 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         playerDataNetworkList[playerDataIndex] = playerData;
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void SetPlayerTeamServerRpc(int team, ServerRpcParams serverRpcParams = default)
+    {
+        int playerDataIndex = GetPlayerDataIndexFromClientID(serverRpcParams.Receive.SenderClientId);
+
+        PlayerData playerData = playerDataNetworkList[playerDataIndex];
+
+        playerData.PlayerTeam = team;
+
+        playerDataNetworkList[playerDataIndex] = playerData;
+    }
     private void NetworkManager_Client_OnClientDisconnectCallback(ulong clientId)
     {
         OnFaildToJoinGame?.Invoke(this, EventArgs.Empty);
@@ -314,6 +329,29 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         }
         return true;
     }
+
+   //private bool IsPlayerTeamSeted(int playerTeam)
+   //{
+   //    foreach (PlayerData playerData in playerDataNetworkList)
+   //    {
+   //        if (playerData.PlayerTeam == playerTeam)
+   //        {
+   //            return false;
+   //        }
+   //    }
+   //    return true;
+   //}
+   //
+   //private int GetPlayerTeam()
+   //{
+   //    for (int i = 0; i < playerDataNetworkList.Count; i++)
+   //    {
+   //        if (IsPlayerTeamSeted(i))
+   //        {
+   //
+   //        }
+   //    }
+   //}
 
     private int GetFirstUnusedColorID()
     {

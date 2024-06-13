@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -9,6 +7,7 @@ public class SoundManager : MonoBehaviour
     private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
 
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
+    
 
     private float volume = 1f;
 
@@ -62,14 +61,12 @@ public class SoundManager : MonoBehaviour
 
     private void DeliveryManager_OnRecipeFailed(object sender, System.EventArgs e)
     {
-        DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        PlaySound(audioClipRefsSO.DeliveryFaild, deliveryCounter.transform.position);
+        PlaySound(audioClipRefsSO.DeliveryFaild, transform.position);
     }
 
     private void DeliveryManager_OnRecipeSuccess(object sender, System.EventArgs e)
     {
-        DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        PlaySound(audioClipRefsSO.DeliverySuccess, deliveryCounter.transform.position);
+        PlaySound(audioClipRefsSO.DeliverySuccess, transform.position);
     }
 
     private void PlaySound(AudioClip[] audioClips, Vector3 position, float volume = 1f)

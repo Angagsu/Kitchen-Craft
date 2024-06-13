@@ -9,6 +9,11 @@ public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private Button playAgainButton;
     [SerializeField] private TextMeshProUGUI recipesDeliveredText;
+    [SerializeField] private TextMeshProUGUI leftTeamRecipesDeliveredText;
+    [SerializeField] private TextMeshProUGUI rightTeamRecipesDeliveredText;
+
+    [SerializeField] private DeliveryCounter leftTeamDeliveredRecipes;
+    [SerializeField] private DeliveryCounter rightTeamDeliveredRecipes;
 
     private void Awake()
     {
@@ -31,8 +36,15 @@ public class GameOverUI : MonoBehaviour
         if (GameManager.Instance.IsGameOver())
         {
             Show();
-
-            recipesDeliveredText.text = DeliveryManager.Instance.GetSuccessfulRecipesAmount().ToString();
+            if (leftTeamDeliveredRecipes && rightTeamDeliveredRecipes)
+            {
+                leftTeamRecipesDeliveredText.text = leftTeamDeliveredRecipes.GetSuccessfulRecipesAmount().ToString();
+                rightTeamRecipesDeliveredText.text = rightTeamDeliveredRecipes.GetSuccessfulRecipesAmount().ToString();
+            }
+            else
+            {            
+                recipesDeliveredText.text = DeliveryManager.Instance.GetSuccessfulRecipesAmount().ToString();
+            }
         }
         else
         {

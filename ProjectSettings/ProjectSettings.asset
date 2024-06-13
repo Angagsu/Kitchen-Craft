@@ -486,7 +486,7 @@ PlayerSettings:
     m_StaticBatching: 1
     m_DynamicBatching: 0
   - m_BuildTarget: Android
-    m_StaticBatching: 1
+    m_StaticBatching: 0
     m_DynamicBatching: 0
   - m_BuildTarget: WebGL
     m_StaticBatching: 0
@@ -552,7 +552,7 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_EncodingQuality: 1
   - m_BuildTarget: Android
-    m_EncodingQuality: 2
+    m_EncodingQuality: 0
   m_BuildTargetGroupHDRCubemapEncodingQuality:
   - m_BuildTarget: Standalone
     m_EncodingQuality: 2

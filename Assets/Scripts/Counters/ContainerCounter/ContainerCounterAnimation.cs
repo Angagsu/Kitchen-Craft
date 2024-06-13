@@ -1,22 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ContainerCounterAnimation : MonoBehaviour
 {
-    [SerializeField] private ContainerCounter containerCounter;
-
     private Animator animator;
-    private  const string OPEN_CLOSE = "OpenClose";
+
+    private int leftSideOpenHash;
+    private int rightSideOpenHash;
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        containerCounter.OnPlayerGrabbedObject += OnPlayerGrabbedObject;
+        leftSideOpenHash = Animator.StringToHash("LeftSideOpen");
+        rightSideOpenHash = Animator.StringToHash("RightSideOpen");
     }
 
-    private void OnPlayerGrabbedObject(object sender, System.EventArgs e)
+    public void SetAnimationTrigger(Player player)
     {
-        animator.SetTrigger(OPEN_CLOSE);
+        if (player.PlayerTeam == 0)
+        {
+            animator.SetTrigger(rightSideOpenHash);
+        }
+        else
+        {
+            animator.SetTrigger(leftSideOpenHash);
+        }
     }
 }

@@ -1,22 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class DeliveryCounter : BaseCounter
 {
-    public static DeliveryCounter Instance { get; private set; }
+    [SerializeField] private int index = 0;
 
-    private void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    private int successfulRecipesAmount;
 
     public override void Interact(Player player)
     {
@@ -24,10 +13,21 @@ public class DeliveryCounter : BaseCounter
         {
             if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
             {
-                DeliveryManager.Instance.DeliverRecipe(plateKitchenObject);
+                DeliveryManager.Instance.DeliverRecipe(plateKitchenObject, index);
 
                 KitchenObject.DestroyKitchenObject(player.GetKitchenObject());
             }
         }
+    }
+
+    [ClientRpc]
+    public void AddSuccessfulRecipesCountClientRpc()
+    {
+        successfulRecipesAmount++;
+    }
+
+    public int GetSuccessfulRecipesAmount()
+    {
+        return successfulRecipesAmount;
     }
 }

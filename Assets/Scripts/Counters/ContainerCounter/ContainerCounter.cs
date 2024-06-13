@@ -1,33 +1,30 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
 public class ContainerCounter : BaseCounter
 {
-    public event EventHandler OnPlayerGrabbedObject;
-
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
+    [SerializeField] private int containerIndex;
+
+    private int playerIndex;
+
 
     public override void Interact(Player player)
     {
         if (!player.HasKitchenObject())
         {
-            KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
+            playerIndex = GameManager.Instance.GetPlayerIndexFromConnectedPlayers(player);
 
-            InteractLogicServerRpc();
+            InteractLogicServerRpc(playerIndex);   
+
+            KitchenObject.SpawnKitchenObject(kitchenObjectSO, player);
         }
     }
-    [ServerRpc(RequireOwnership = false)]
-    private void InteractLogicServerRpc()
-    {
-        InteractLogicClientRpc();
-    }
 
-    [ClientRpc]
-    private void InteractLogicClientRpc()
+    [ServerRpc(RequireOwnership = false)]
+    private void InteractLogicServerRpc(int index)
     {
-        OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+        ContainerAnimationManager.Instance.GetPlayerClientRpc(index);
+        ContainerAnimationManager.Instance.SetAnimationForCurrentContainerClientRpc(containerIndex);
     }
 }

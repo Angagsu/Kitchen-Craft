@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class PlateKitchenObject : KitchenObject
+public class PlateKitchenObject : KitchenObject 
 {
     public event EventHandler<OnIngredientAddedEventArgs> OnIngredientAdded;
     public class OnIngredientAddedEventArgs : EventArgs { public KitchenObjectSO kitchenObjectSO; }

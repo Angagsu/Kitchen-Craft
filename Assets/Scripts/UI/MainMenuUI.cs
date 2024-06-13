@@ -1,6 +1,5 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
@@ -9,6 +8,7 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] private Button playSingleplayerButton;
     [SerializeField] private Button playMultiplayerButton;
+    [SerializeField] private Button playMultiplayerArenaButton;
     [SerializeField] private Button quitButton;
 
     private void Awake()
@@ -16,14 +16,21 @@ public class MainMenuUI : MonoBehaviour
         playSingleplayerButton.onClick.AddListener(() => 
         {
             KitchenGameMultiplayer.IsPlayMultiplayer = false;
-
+            KitchenGameMultiplayer.IsPlayMultiplayerArenaMode = false;
             Loader.Load(Loader.Scene.LobbyScene);
         });
 
         playMultiplayerButton.onClick.AddListener(() =>
         {
             KitchenGameMultiplayer.IsPlayMultiplayer = true;
+            KitchenGameMultiplayer.IsPlayMultiplayerArenaMode = false;
+            Loader.Load(Loader.Scene.LobbyScene);
+        });
 
+        playMultiplayerArenaButton.onClick.AddListener(() =>
+        {
+            KitchenGameMultiplayer.IsPlayMultiplayer = true;
+            KitchenGameMultiplayer.IsPlayMultiplayerArenaMode = true;
             Loader.Load(Loader.Scene.LobbyScene);
         });
 
